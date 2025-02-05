@@ -71,11 +71,26 @@
                             <img src="../../fotos/icono3.png" alt="Icono traducción">
                             <img src="../../fotos/icono2.png" alt="Icono filtrar búsqueda">
                             <div class="boton"><button type="button" name="detalles">Ocultar los detalles</button>
-                                <!--Me hubiera gustado que el botón mostrase el bloque de detalles de la derecha, que estaría
-                                    oculto originalmente, pero me han comentado que tendría que ser con javascript 😔-->
                             </div>
-                        </div>
-                    </div>
+                            <script>
+                                document.addEventListener("DOMContentLoaded", function () {
+                                const button = document.querySelector("#boton button");
+                                const tercerBloque = document.querySelector(".tercerBloque");
+
+                                    tercerBloque.style.display = "none";
+                                    button.textContent = "Detalles";
+
+                                    button.addEventListener("click", function () {
+                                        if (tercerBloque.style.display === "none") {
+                                            tercerBloque.style.display = "block";
+                                            button.textContent = "Ocultar detalles";
+                                        } else {
+                                            tercerBloque.style.display = "none";
+                                            button.textContent = "Detalles";
+                                        }
+                                    });
+                                });
+                            </script>
 
                     <div class="cuerpoConversacion">
                         <h6>23 de marzo</h6>
